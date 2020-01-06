@@ -9,10 +9,11 @@
  */
 
 class AdonisDropbox {
-    constructor({ Config, Dropbox, fetch, fileType }) {
+    constructor({ Config, Dropbox, fetch, fileType, uuid }) {
         this.Config = Config;
         this.client = new Dropbox({ accessToken: this.Config.get('dropbox.accessToken'), fetch });
         this.fileType = fileType;
+        this.uuid = uuid;
     }
 
     getRootPath() {
@@ -23,7 +24,7 @@ class AdonisDropbox {
     async upload(buffer) {
         const { ext } = this.fileType(buffer);
         return this.client.filesUpload({
-            path: `${this.getRootPath()}${new Date().getTime()}.${ext}`,
+            path: `${this.getRootPath()}${this.uuid()}.${ext}`,
             contents: buffer,
         });
     }

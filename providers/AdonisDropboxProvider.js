@@ -6,9 +6,10 @@ class AdonisMongodbProvider extends ServiceProvider {
             const Config = this.app.use('Adonis/Src/Config');
             const fetch = this.app.use('isomorphic-fetch');
             const fileType = this.app.use('file-type');
+            const uuid = this.app.use('uuid/v4');
             /** @type {import('dropbox/lib')} */
             const { Dropbox } = this.app.use('dropbox');
-            return new (require('../src/AdonisDropbox'))({ Config, Dropbox, fetch, fileType });
+            return new (require('../src/AdonisDropbox'))({ Config, Dropbox, fetch, fileType, uuid });
         });
     }
 }
