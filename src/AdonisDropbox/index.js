@@ -15,13 +15,21 @@ class AdonisDropbox {
         this.fileType = fileType;
     }
 
-    async upload(buffer) {
+    getRootPath() {
         const rootPath = this.Config.get('dropbox.rootPath') || '/';
+        return rootPath[rootPath.length - 1] === '/' ? rootPath : `${rootPath}/`;
+    }
+
+    async upload(buffer) {
         const { ext } = this.fileType(buffer);
         return this.client.filesUpload({
-            path: `${rootPath[rootPath.length - 1] === '/' ? rootPath : `${rootPath}/`}${new Date().getTime()}.${ext}`,
+            path: `${this.getRootPath()}${new Date().getTime()}.${ext}`,
             contents: buffer,
         });
+    }
+
+    async download(name, customPath = null) {
+        return this.client.filesDownload({ path: `${customPath || this.getRootPath()}${name}` });
     }
 }
 
