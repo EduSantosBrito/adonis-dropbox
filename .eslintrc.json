@@ -5,7 +5,8 @@
     },
     "extends": ["airbnb-base", "prettier"],
     "globals": {
-        "use": "readonly"
+        "use": "readonly",
+        "Blob": "readonly"
     },
     "parserOptions": {
         "ecmaVersion": 2018,
