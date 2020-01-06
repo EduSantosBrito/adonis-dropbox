@@ -38,6 +38,7 @@
     },
     "dependencies": {
         "dropbox": "^4.0.30",
+        "file-type": "^12.4.2",
         "isomorphic-fetch": "^2.2.1"
     },
     "peerDependencies": {
