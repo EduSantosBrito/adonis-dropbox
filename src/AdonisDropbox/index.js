@@ -9,9 +9,9 @@
  */
 
 class AdonisDropbox {
-    constructor({ Config, Dropbox }) {
+    constructor({ Config, Dropbox, fetch }) {
         this.Config = Config;
-        this.client = new Dropbox({ accessToken: this.Config.get('dropbox.accessToken') });
+        this.client = new Dropbox({ accessToken: this.Config.get('dropbox.accessToken'), fetch });
     }
 
     async upload(buffer) {
