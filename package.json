@@ -28,7 +28,6 @@
     "homepage": "https://github.com/EduSantosBrito/adonis-dropbox#readme",
     "devDependencies": {
         "@adonisjs/fold": "^4.0.9",
-        "dropbox": "^4.0.30",
         "eslint": "^6.8.0",
         "eslint-config-airbnb-base": "^14.0.0",
         "eslint-config-prettier": "^6.9.0",
@@ -37,8 +36,10 @@
         "husky": "^3.1.0",
         "prettier": "^1.19.1"
     },
+    "dependencies": {
+        "dropbox": "^4.0.30"
+    },
     "peerDependencies": {
-        "dropbox": "^4.0.30",
         "@adonisjs/fold": "^4.0.9"
     }
 }
