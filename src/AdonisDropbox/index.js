@@ -32,6 +32,10 @@ class AdonisDropbox {
     async download(name, customPath = null) {
         return this.client.filesDownload({ path: `${customPath || this.getRootPath()}${name}` });
     }
+
+    async remove(name, customPath = null) {
+        return this.client.filesDelete({ path: `${customPath || this.getRootPath()}${name}` });
+    }
 }
 
 module.exports = AdonisDropbox;
