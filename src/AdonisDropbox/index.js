@@ -18,7 +18,10 @@ class AdonisDropbox {
     async upload(buffer) {
         const rootPath = this.Config.get('dropbox.rootPath') || '/';
         const { ext } = this.fileType(buffer);
-        return this.client.filesUpload({ path: `${rootPath}/${new Date().getTime()}.${ext}`, contents: buffer });
+        return this.client.filesUpload({
+            path: `${rootPath[rootPath.length - 1] === '/' ? rootPath : `${rootPath}/`}${new Date().getTime()}.${ext}`,
+            contents: buffer,
+        });
     }
 }
 
