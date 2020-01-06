@@ -15,8 +15,8 @@ class AdonisDropbox {
     }
 
     async upload(buffer) {
-        const blob = new Blob([buffer]);
-        return this.client.filesUpload({ path: `/teste/${new Date().getTime()}.txt`, contents: blob });
+        console.log('DEBUG:: ', buffer);
+        return this.client.filesUpload({ path: `/teste/${new Date().getTime()}.txt`, contents: buffer });
     }
 }
 
