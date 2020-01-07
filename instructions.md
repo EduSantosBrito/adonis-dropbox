@@ -26,6 +26,7 @@ Once done you can access `Dropbox` provider and use it as follows.
 ```js
 /** @type {import('adonis-dropbox/src/AdonisDropbox')} */
 const Dropbox = use('Dropbox');
+const fs = use('fs');
 const path = use('path');
 
 Route.get("/:fileNameWithExtension", async ({ request, response, params }) => {
