@@ -1,0 +1,8 @@
+const Env = use('Env')
+
+module.exports = {
+    // You can use Env.get if your access token is in environment variables
+    accessToken: Env.get('ACCESS_TOKEN', '<YOUR_DROPBOX_ACCESS_TOKEN>'),
+    // You can define root path for your project inside an Application in Dropbox, default: '/'
+    rootPath: '/example/custom/path',
+};
