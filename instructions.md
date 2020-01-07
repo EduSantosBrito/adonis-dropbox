@@ -6,7 +6,7 @@ Make sure to register the adonis-dropbox provider to make use of `Dropbox`. The 
 const providers = ['adonis-dropbox/providers/AdonisDropboxProvider'];
 ```
 
-### Config mongodb collection
+### Dropbox config
 
 the config automatic create to `config/dropbox.js` file
 
