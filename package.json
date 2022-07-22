@@ -38,7 +38,7 @@
     },
     "dependencies": {
         "dropbox": "^4.0.30",
-        "file-type": "^12.4.2",
+        "file-type": "^16.5.4",
         "isomorphic-fetch": "^2.2.1",
         "uuid": "^3.3.3"
     },
